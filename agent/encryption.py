@@ -1,4 +1,4 @@
-class Encrption:
+class Encryption:
     @staticmethod
     def encrypt(data,key):
         result = ""
