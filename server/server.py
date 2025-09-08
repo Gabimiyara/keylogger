@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 @app.route('/save_data',methods=['POST'])
-def recive():
+def receive():
     data = request.get_json()
 
 

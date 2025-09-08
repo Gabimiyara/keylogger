@@ -1,6 +1,6 @@
 class Encryption:
     @staticmethod
-    def encrypt(data,key):
+    def encrypt(data:str,key:str):
         result = ""
         i = 0
         while len(data) > i:
@@ -15,10 +15,10 @@ class Encryption:
         # return "".join(chr(ord(c) ^ key) for c in data)
     def decrypt(data,key):
         return Encryption.encrypt(data,key)
-    
-a = Encryption.encrypt("gavriel","sdf")
-print(a)
-b = Encryption.encrypt(a,"sdf")
-print(b)       
+#
+# a = Encryption.encrypt("gavriel","sdf")
+# print(a)
+# b = Encryption.encrypt(a,"sdf")
+# print(b)
 
 
