@@ -13,7 +13,3 @@ class WriteServer(IWriter):
         machine_name = get_hostname()
         data = {machine_name:data}
         requests.post(self.url,json=data)
-
-
-a = WriteServer()
-a.send_data("I am ")
