@@ -16,6 +16,7 @@ class  KeyLoggerManager:
         if getattr(self, "_initialized", False):
             return
         self._initialized = True
+
         self.collect_interval = 5
         self.flush_interval = 300
         self.buffer = []
