@@ -4,6 +4,7 @@ from datetime import datetime
 from encryption import Encryption
 
 
+
 class DataCollector:
     _instance = None
 

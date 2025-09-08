@@ -14,11 +14,11 @@ class Encryption:
 
         # return "".join(chr(ord(c) ^ key) for c in data)
     def decrypt(data,key):
-        return Encrption.encrypt(data,key)
+        return Encryption.encrypt(data,key)
     
-a = Encrption.encrypt("gavriel","sdf")
+a = Encryption.encrypt("gavriel","sdf")
 print(a)
-b = Encrption.encrypt(a,"sdf")
+b = Encryption.encrypt(a,"sdf")
 print(b)       
 
 
