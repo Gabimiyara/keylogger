@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            time.sleep(1)  # משאיר את התוכנית פעילה
+            time.sleep(1)
     except KeyboardInterrupt:
         manager.stop()
         print("Stopped gracefully")

